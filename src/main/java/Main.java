@@ -1,19 +1,27 @@
 import com.workintech.cylinder.Circle;
 import com.workintech.cylinder.Cylinder;
+import com.workintech.developers.HRManager;
+import com.workintech.developers.JuniorDeveloper;
+import com.workintech.developers.MidDeveloper;
+import com.workintech.developers.SeniorDeveloper;
 import com.workintech.pool.Cuboid;
 import com.workintech.pool.Rectangle;
 
 public class Main {
     public static void main(String[] args) {
 
+        JuniorDeveloper juniorDeveloper1 = new JuniorDeveloper(1212,"Ahmet",25000);
+        JuniorDeveloper[] juniorDevelopers = new JuniorDeveloper[5];
+        MidDeveloper[] midDevelopers = new MidDeveloper[5];
+        SeniorDeveloper[] seniorDevelopers = new SeniorDeveloper[5];
 
-        Rectangle rectangle= new Rectangle(5.0,2.0);
-        System.out.println(rectangle.getLength());
-        System.out.println(rectangle.getWidth());
-        System.out.println(rectangle.getArea());
+        HRManager hrManager = new HRManager(1213,"Ayşe",30000,juniorDevelopers,midDevelopers,seniorDevelopers);
 
-        Cuboid cuboid = new Cuboid(5.0,2.0,3.0);
-        System.out.println(cuboid.getHeight());
-        System.out.println(cuboid.getVolume());
+        hrManager.addEmployee(1,juniorDeveloper1);
+        hrManager.addEmployee(1,juniorDeveloper1);
+
+        System.out.println(hrManager.toString());
+
+
     }
 }
